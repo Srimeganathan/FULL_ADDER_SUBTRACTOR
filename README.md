@@ -37,8 +37,7 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
-![ex 4 program](https://github.com/user-attachments/assets/a663e275-30db-4a09-8272-f6a2a297febf)
-![ex 4 program 1](https://github.com/user-attachments/assets/a66d4eb4-4678-428a-b730-16f6dee673b3)
+![170e3ab3-a7da-4759-ac4e-b3311f32dbd4](https://github.com/user-attachments/assets/ccf3ba0a-c4db-40cc-aa8a-ed18c626e05e)
 
 **Procedure**
 
@@ -46,19 +45,47 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
-![ex 4 program 1](https://github.com/user-attachments/assets/4fe47de6-0e37-4366-ab34-e70f709a2690)
-![ex 4 1](https://github.com/user-attachments/assets/c20531be-78a7-4817-8d80-c351e11b4e26)
+Full Adder
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+module fulladder(sum, cout, a, b, cin); output sum;
+output cout;
+input a;
+input b;
+input cin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=a&b;
+assign w3=w1&cin;
+assign sum=w1^cin;
+assign cout=w2|w3;
+endmodule 
+
+Full Subtractor
+
+module fullsub(df,bo,a,b,bin); 
+output df;
+output bo; 
+input a; 
+input b; 
+input bin;
+wire w1,w2,w3; 
+assign w1=a^b; 
+assign w2=(~a&b); 
+assign w3=(~w1&bin); 
+assign df=w1^bin; 
+assign bo=w2|w3; 
+endmodule
+design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
 **RTL Schematic**
-![ex 4 logic](https://github.com/user-attachments/assets/f88e0035-98f1-4d41-b515-deb32f1d980b)
-![ex 4 logic 1](https://github.com/user-attachments/assets/5b26d76e-22b2-4b76-bd6f-85063b5052c4)
+![80103c29-ca04-42dc-bb5d-39daed6b00e7](https://github.com/user-attachments/assets/47eb5737-6676-442d-8686-ba88de91dd51)
+![81712c0b-7809-47fc-9773-696d08137039](https://github.com/user-attachments/assets/ab79b461-ddcd-4144-ab1c-a79fc45d04ac)
+![3c1e0a97-e532-4542-bb65-be0f8fa8d476](https://github.com/user-attachments/assets/d6afcd13-0ae9-4f7e-82dd-1f17b5a7a696)
 
-**Output Timing Waveform**
-![ex 4 op](https://github.com/user-attachments/assets/ffd847ee-2e44-4692-9973-8229834d0a83)
-![ex 4 op 1](https://github.com/user-attachments/assets/6740c112-dd16-478d-89c3-81daba4a3af1)
+**Output Timing 
+![79f997fb-1fc5-4ba0-9235-b2ad8b4c59c8](https://github.com/user-attachments/assets/0214307a-b3d7-41e2-bdcf-d7db39e6c9df)Waveform**
+![173c944a-65fb-4300-9f59-028843e135d3](https://github.com/user-attachments/assets/5c3aaf49-72f7-47fc-a72d-d50b3aed5a6e)
 
 **Result:**
 
